@@ -46,7 +46,6 @@ const FabriceTestPage = () => {
       <Card sx={{ padding: 2, borderRadius: 2, boxShadow: 3 }}>
         <Grid container spacing={4}>
           {engagementDrivers.map(driver => {
-            // Dynamically calculate circle size based on percentage
             const size = (driver.percentage / 100) * (maxSize - minSize) + minSize
 
             return (
@@ -54,7 +53,7 @@ const FabriceTestPage = () => {
                 item
                 xs={12}
                 sm={6}
-                md={2.4} // 5 columns on medium screens
+                md={2.4}
                 key={driver.topic}
                 sx={{
                   display: 'flex',
@@ -66,9 +65,9 @@ const FabriceTestPage = () => {
                 {/* Header Container */}
                 <Box
                   sx={{
-                    minHeight: 70, // Ensures consistent header height
+                    minHeight: 70,
                     display: 'flex',
-                    flexDirection: 'column', // Stack header and regions text
+                    flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
                     textAlign: 'center'
@@ -80,7 +79,7 @@ const FabriceTestPage = () => {
                       fontWeight: 'bold',
                       fontSize: '1rem',
                       lineHeight: 1.2,
-                      marginBottom: 0.5 // Reduce gap between header and "xx regions"
+                      marginBottom: 0.5
                     }}
                   >
                     {driver.topic}
@@ -98,7 +97,7 @@ const FabriceTestPage = () => {
                 {/* Circle Container */}
                 <Box
                   sx={{
-                    minHeight: 150, // Set a consistent height for all circles
+                    minHeight: 150,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
