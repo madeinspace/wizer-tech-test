@@ -5,8 +5,21 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
+type EngagementDriver = {
+  topic: string
+  color: string
+  percentage: number
+}
+
+type SmallVoteData = {
+  label: string
+  value: string
+  percentage: number
+  votes: number
+}
+
 const FabriceTestPage = () => {
-  const engagementDrivers = [
+  const engagementDrivers: EngagementDriver[] = [
     { topic: 'Health Policy', color: '#4cafef', percentage: 90 },
     { topic: 'Housing', color: '#7e57c2', percentage: 70 },
     { topic: 'Investment Strategies', color: '#3f51b5', percentage: 80 },
@@ -14,14 +27,14 @@ const FabriceTestPage = () => {
     { topic: 'Sustainability Efforts', color: '#4caf50', percentage: 100 }
   ]
 
-  const smallVotesData = [
+  const smallVotesData: SmallVoteData[] = [
     { label: 'Gender', value: 'Female', percentage: 35, votes: 10 },
     { label: 'Age', value: '40+', percentage: 15, votes: 34 },
     { label: 'Ethnicity', value: 'Afr/ME', percentage: 25, votes: 56 },
     { label: 'Team', value: 'Gov', percentage: 25, votes: 2 }
   ]
 
-  const totalVotes = smallVotesData.reduce((sum, v) => sum + v.votes, 0)
+  const totalVotes = smallVotesData.reduce((sum: number, v: SmallVoteData) => sum + v.votes, 0)
 
   const maxSize = 150
   const minSize = 50
